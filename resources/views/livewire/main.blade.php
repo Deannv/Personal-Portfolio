@@ -11,6 +11,13 @@
         <section class="min-h-[70dvh] md:min-w-[75dvw] md:min-h-[85dvh] bg-tertiary rounded-xl">
             <span class="text-white flex p-2 bg-gray-800">Output</span>
             {{-- Content --}}
+            @if ($selectedShortcut == 'Experience')
+                <
+            @elseif()
+                
+            @else
+
+            @endif
             <span class="text-white">{{ $commandText }}</span>
             {{-- End of Content --}}
         </section>

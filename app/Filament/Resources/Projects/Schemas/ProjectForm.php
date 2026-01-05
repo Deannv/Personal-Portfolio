@@ -2,8 +2,10 @@
 
 namespace App\Filament\Resources\Projects\Schemas;
 
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 
 class ProjectForm
@@ -14,11 +16,23 @@ class ProjectForm
             ->components([
                 TextInput::make('name')
                     ->required(),
+                TextInput::make('url')
+                    ->url(),
                 Textarea::make('description')
                     ->required()
                     ->columnSpanFull(),
-                TextInput::make('url')
-                    ->url(),
+                Section::make('Highlights')
+                    ->columns(2)
+                    ->columnSpan(2)
+                    ->schema([
+                        Select::make('Relevant Skills')
+                            ->relationship('skills')
+                            ->multiple()
+                            ->createOptionForm([
+                                TextInput::make('name')
+                                    ->required()
+                            ])
+                    ])
             ]);
     }
 }
