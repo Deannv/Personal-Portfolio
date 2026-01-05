@@ -5,7 +5,33 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: "Google Sans Code", monospace, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-theme: #1a1b25;
+    --color-primary: #82d0fc;
+    --color-secondary: #ba9af3;
+    --color-tertiary: #16161e;
+}
+
+@keyframes caretAnimation {
+    50% {
+        opacity: 0;
+    }
+    75%{
+        opacity: 0;
+    }
+}
+
+.caret {
+    animation: caretAnimation 1.2s step-end infinite;
+}
+
+input:focus, 
+select:focus, 
+textarea:focus, 
+button:focus {
+    outline: none; 
 }
