@@ -25,6 +25,8 @@ return new class extends Migration
                 EmploymentType::Internship->value,
             ])->default(EmploymentType::Fulltime->value);
             $table->boolean('is_currently_working')->default(false);
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
             $table->string('location')->nullable();
             $table->enum('location_type', [
                 LocationType::OnSite->value,

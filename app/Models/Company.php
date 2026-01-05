@@ -9,7 +9,7 @@ class Company extends Model
 {
     protected $guarded = ['id'];
 
-    function experiences(): HasMany
+    public function experiences(): HasMany
     {
         return $this->hasMany(Experience::class);
     }

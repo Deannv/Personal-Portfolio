@@ -9,12 +9,12 @@ class Skill extends Model
 {
     protected $guarded = ['id'];
 
-    function experiences(): BelongsToMany
+    public function experiences(): BelongsToMany
     {
         return $this->belongsToMany(Experience::class);
     }
 
-    function projects(): BelongsToMany
+    public function projects(): BelongsToMany
     {
         return $this->belongsToMany(Project::class);
     }

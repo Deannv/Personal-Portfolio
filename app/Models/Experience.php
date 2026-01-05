@@ -11,13 +11,18 @@ class Experience extends Model
 {
     protected $guarded = ['id'];
 
-    function company(): BelongsTo
+    public function company(): BelongsTo
     {
         return $this->belongsTo(Company::class);
     }
 
-    function skills(): BelongsToMany
+    public function skills(): BelongsToMany
     {
         return $this->belongsToMany(Skill::class);
+    }
+
+    public function experienceBulletPoints(): HasMany
+    {
+        return $this->hasMany(ExperienceBulletPoint::class);
     }
 }

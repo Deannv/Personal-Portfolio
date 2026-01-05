@@ -9,7 +9,7 @@ class Project extends Model
 {
     protected $guarded = ['id'];
 
-    function skills(): BelongsToMany
+    public function skills(): BelongsToMany
     {
         return $this->belongsToMany(Skill::class);
     }
