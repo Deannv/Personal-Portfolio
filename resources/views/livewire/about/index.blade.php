@@ -9,15 +9,15 @@
 
         <div class="flex flex-col md:justify-between md:pr-6 gap-4 md:flex-row md:items-start">
             <div>
-                <div class="flex items-center gap-2">
+                <div class="flex items-start gap-2">
                     <span class="text-yellow-500">name:</span>
                     <span class="text-white">{{ config('app.name') }}</span>
                 </div>
-                <div class="flex items-center gap-2">
+                <div class="flex items-start gap-2">
                     <span class="text-yellow-500">role:</span>
                     <span class="text-white">{{ $content->role }}</span>
                 </div>
-                <div class="flex items-center gap-2">
+                <div class="flex items-start gap-2">
                     <span class="text-yellow-500">passion:</span>
                     <span class="text-white">{{ $content->passion }}</span>
                 </div>
