@@ -5,6 +5,49 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+
+        {{-- Meta --}}
+        <meta name="description" content="Software engineer specializing in backend and full-stack development, with hands-on experience in Laravel and modern web stacks. An Apple Developer Academy alumnus, trained in product thinking, teamwork, and delivering solutions based on real user needs.">
+        <meta name="keywords" content="Kemas, {{ config('app.username') }}, Kemas Muhamad Abdillah Deanova, Kemz, Kemas Portfolio, portfolio, {{ config('app.username') }} Portfolio, Kemas Software Engineer, software engineer in Bali, software engineer nearby, Laravel, iOS Developer in Bali, iOS Developer, Kemas Developer, Kemas Eivern">
+        <meta name="author" content="{{ config('app.username') }}">
+
+        <meta name="robots" content="index, follow">
+        <meta name="googlebot" content="index, follow">
+
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="{{ config('app.username') }}'s Portfolio">
+        <meta property="og:title" content="Console Portfolio">
+        <meta property="og:description" content="Software engineer specializing in backend and full-stack development, with hands-on experience in Laravel and modern web stacks. An Apple Developer Academy alumnus, trained in product thinking, teamwork, and delivering solutions based on real user needs. I enjoy designing clean systems, solving complex problems, and building software that’s both scalable and meaningful.">
+        <meta property="og:url" content="{{ config('app.url') }}">
+        <meta property="og:image" content="{{ config('app.url') }}/kemas-draw.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="{{ config('app.username') }}'s Sketch">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ config('app.username') }}'s Portfolio">
+        <meta name="twitter:description" content="Software engineer specializing in backend and full-stack development, with hands-on experience in Laravel and modern web stacks. An Apple Developer Academy alumnus, trained in product thinking, teamwork, and delivering solutions based on real user needs.">
+        <meta name="twitter:image" content="{{ config('app.url') }}/kemas-draw.png">
+        <meta name="twitter:site" content="@yourhandle">
+
+        <link rel="icon" href="/kemas-draw.png">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Kemas Deanova",
+            "url": "https://kemas.eivern.com",
+            "sameAs": [
+                "https://www.linkedin.com/in/kemasdnv",
+                "https://github.com/Deannv"
+            ]
+        }
+        </script>
+
+
+        {{-- End of Meta --}}
+
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <style>
             /* * {
