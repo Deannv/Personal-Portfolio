@@ -26,7 +26,9 @@ class ProjectForm
                     ->columnSpan(2)
                     ->schema([
                         Select::make('Relevant Skills')
-                            ->relationship('skills')
+                            ->relationship('skills', 'name')
+                            ->searchable()
+                            ->preload()
                             ->multiple()
                             ->createOptionForm([
                                 TextInput::make('name')

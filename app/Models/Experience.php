@@ -25,4 +25,12 @@ class Experience extends Model
     {
         return $this->hasMany(ExperienceBulletPoint::class);
     }
+
+    protected function casts(): array
+    {
+        return [
+            'start_date' => 'date',
+            'end_date' => 'date',
+        ];
+    }
 }

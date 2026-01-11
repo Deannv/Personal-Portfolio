@@ -1,24 +1,30 @@
 <?php
 
-namespace App\Filament\Resources\Skills\Tables;
+namespace App\Filament\Resources\Certifications\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
-class SkillsTable
+class CertificationsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name')
+                TextColumn::make('title')
                     ->searchable(),
-                ToggleColumn::make('is_top')
+                TextColumn::make('organization')
+                    ->searchable(),
+                TextColumn::make('issued_on')
+                    ->date()
                     ->sortable(),
+                ImageColumn::make('image'),
+                TextColumn::make('credential_id')
+                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -1,15 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\Skills\Tables;
+namespace App\Filament\Resources\Education\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
-class SkillsTable
+class EducationTable
 {
     public static function configure(Table $table): Table
     {
@@ -17,7 +16,13 @@ class SkillsTable
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),
-                ToggleColumn::make('is_top')
+                TextColumn::make('major')
+                    ->searchable(),
+                TextColumn::make('start_date')
+                    ->date()
+                    ->sortable(),
+                TextColumn::make('end_date')
+                    ->date()
                     ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()

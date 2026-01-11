@@ -2,16 +2,24 @@
 
 namespace App\Livewire\Experience;
 
-use App\Models\Experience;
+use App\Models\Company;
 use Livewire\Component;
 
 class Index extends Component
 {
-    public $experiences;
+    public $companies;
 
     public function mount()
     {
-        $this->experiences = Experience::with(['skills', 'experienceBulletPoints'])->get();
+        $this->companies = Company::with([
+            'experiences' => function ($query) {
+                $query
+                    ->orderByDesc('is_currently_working')
+                    ->orderByDesc('end_date');
+            },
+            'experiences.skills',
+            'experiences.experienceBulletPoints',
+        ])->get();
     }
 
     public function render()

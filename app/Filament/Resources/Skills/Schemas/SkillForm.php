@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Skills\Schemas;
 
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
 class SkillForm
@@ -13,6 +14,8 @@ class SkillForm
             ->components([
                 TextInput::make('name')
                     ->required(),
+                Toggle::make('is_top')
+                    ->onColor('success')
             ]);
     }
 }

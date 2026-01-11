@@ -40,6 +40,7 @@ class ExperienceForm
                         'self-employment' => 'Self employment',
                         'internship' => 'Internship',
                     ])
+                    ->preload()
                     ->default('full-time')
                     ->required(),
                 Toggle::make('is_currently_working')
@@ -67,8 +68,10 @@ class ExperienceForm
                             ]),
 
                         Select::make('Relevant Skills')
-                            ->relationship('skills')
+                            ->relationship('skills', 'name')
                             ->multiple()
+                            ->preload()
+                            ->searchable()
                             ->createOptionForm([
                                 TextInput::make('name')
                                     ->required()

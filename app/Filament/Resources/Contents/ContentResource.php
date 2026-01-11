@@ -18,7 +18,17 @@ class ContentResource extends Resource
 {
     protected static ?string $model = Content::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::DocumentText;
+
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
+    public static function canDeleteAny(): bool
+    {
+        return false;
+    }
 
     public static function form(Schema $schema): Schema
     {
@@ -41,7 +51,7 @@ class ContentResource extends Resource
     {
         return [
             'index' => ListContents::route('/'),
-            'create' => CreateContent::route('/create'),
+            // 'create' => CreateContent::route('/create'),
             'edit' => EditContent::route('/{record}/edit'),
         ];
     }

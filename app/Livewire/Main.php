@@ -7,11 +7,10 @@ use Livewire\Component;
 class Main extends Component
 {
     public $shortcuts = [
-        'Home',
+        'About',
         'Experience',
         'Projects',
         'Certifications',
-        'Contact',
     ];
 
     public $selectedShortcut = 'Home';

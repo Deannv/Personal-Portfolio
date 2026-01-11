@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Contents\Schemas;
 
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
@@ -22,6 +23,10 @@ class ContentForm
                     ->url(),
                 Toggle::make('is_available')
                     ->required(),
+                TextInput::make('role'),
+                TextInput::make('passion'),
+                Textarea::make('description')
+                    ->columnSpanFull(),
             ]);
     }
 }

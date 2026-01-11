@@ -32,6 +32,10 @@ class ContentsTable
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('role')
+                    ->searchable(),
+                TextColumn::make('passion')
+                    ->searchable(),
             ])
             ->filters([
                 //
@@ -41,7 +45,7 @@ class ContentsTable
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    // DeleteBulkAction::make(),
                 ]),
             ]);
     }
