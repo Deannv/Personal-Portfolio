@@ -32,19 +32,20 @@
 
         <link rel="icon" href="/kemas-draw.png">
 
+        @verbatim
         <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Kemas Deanova",
-            "url": "https://kemas.eivern.com",
-            "sameAs": [
-                "https://www.linkedin.com/in/kemasdnv",
-                "https://github.com/Deannv"
-            ]
-        }
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Kemas Deanova",
+                "url": "https://kemas.eivern.com",
+                "sameAs": [
+                    "https://www.linkedin.com/in/kemasdnv",
+                    "https://github.com/Deannv"
+                ]
+            }
         </script>
-
+        @endverbatim
 
         {{-- End of Meta --}}
 
