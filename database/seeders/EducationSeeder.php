@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Education;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -25,5 +26,9 @@ class EducationSeeder extends Seeder
                 'start_date' => '2022-08-11',
             ],
         ];
+
+        foreach ($education as $edu) {
+            Education::create($edu);
+        }
     }
 }
